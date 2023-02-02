@@ -3,7 +3,7 @@ from decimal import Decimal
 import pytest
 import requests
 
-testdata = ["BTCUSDT", "ETHUSDT"]
+testdata = ["BTCUSDT", "ETHUSDT", "BNBUSDT", "APTUSDT", "LTCUSDT", "DASHUSDT","SOLUSDT", "OPUSDT", "APEUSDT"]
 
 
 @pytest.mark.parametrize('symbol', testdata)

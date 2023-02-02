@@ -5,8 +5,8 @@ import pytest
 import requests
 
 
-testdata = [["BTCUSDT", 10], ["ETHUSDT", 10]]
-
+testdata = [["BTCUSDT", 10], ["ETHUSDT", 10], ["BNBUSDT", 10], ["APTUSDT", 10],
+            ["LTCUSDT", 10], ["DASHUSDT", 10], ["SOLUSDT", 10], ["OPUSDT", 10], ["APEUSDT", 10]]
 
 @pytest.mark.parametrize('symbol, recent_trade_limit', testdata)
 def test_market_data_RecentTradeList_valid_symbol_limit(symbol, recent_trade_limit):

@@ -13,7 +13,7 @@ testdata = [["BTCUSDT", '1m'], ["BTCUSDT", '15m'], ["BTCUSDT", '1h'], ["BTCUSDT"
 @pytest.mark.parametrize('symbol, interval', testdata)
 def test_market_data_CurrentAveragePrice_valid_symbol_interval(symbol, interval):
     query = {'symbol': symbol, 'interval': interval}
-    response = requests.get('https://api.binance.com/api/v3/klines', params=query)
+    response = requests.get('https://api.binance.com/api/v3/uiKlines', params=query)
     resJson = response.json()
 
     kline_open_time = Decimal(resJson[0][0])
@@ -48,7 +48,7 @@ def test_market_data_CurrentAveragePrice_valid_symbol_interval(symbol, interval)
 
 def test_market_data_CurrentAveragePrice_only_symbol():
     query = {'symbol': 'BTCUSDT'}
-    response = requests.get('https://api.binance.com/api/v3/klines', params=query)
+    response = requests.get('https://api.binance.com/api/v3/uiKlines', params=query)
     resJson = response.json()
 
     assert resJson['code'] == -1102
@@ -57,7 +57,7 @@ def test_market_data_CurrentAveragePrice_only_symbol():
 
 def test_market_data_CurrentAveragePrice_only_inteval():
     query = {'interval': '1m'}
-    response = requests.get('https://api.binance.com/api/v3/klines', params=query)
+    response = requests.get('https://api.binance.com/api/v3/uiKlines', params=query)
     resJson = response.json()
 
     assert resJson['code'] == -1102
@@ -66,7 +66,7 @@ def test_market_data_CurrentAveragePrice_only_inteval():
 
 def test_market_data_CurrentAveragePrice_empty_symbol():
     query = {'symbol': '', 'interval': '1m'}
-    response = requests.get('https://api.binance.com/api/v3/klines', params=query)
+    response = requests.get('https://api.binance.com/api/v3/uiKlines', params=query)
     resJson = response.json()
 
     assert resJson['code'] == -1105

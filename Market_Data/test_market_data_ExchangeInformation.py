@@ -2,7 +2,7 @@ import pytest
 import requests
 
 
-testdata = ["BTCUSDT", "ETHUSDT"]
+testdata = ["BTCUSDT", "ETHUSDT", "BNBUSDT", "APTUSDT", "LTCUSDT", "SOLUSDT","SOLUSDT", "UNIUSDT", "APEUSDT"]
 
 
 @pytest.mark.parametrize('symbol', testdata)

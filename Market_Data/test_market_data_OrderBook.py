@@ -2,7 +2,8 @@ from decimal import Decimal
 import pytest
 import requests
 
-testdata = [["BTCUSDT", 200], ["ETHUSDT", 200]]
+testdata = [["BTCUSDT", 200], ["ETHUSDT", 200], ["BNBUSDT", 200], ["APTUSDT", 200],
+            ["LTCUSDT", 200], ["DASHUSDT", 200], ["SOLUSDT", 200], ["OPUSDT", 200], ["APEUSDT", 200]]
 
 
 @pytest.mark.parametrize('symbol, limit', testdata)
